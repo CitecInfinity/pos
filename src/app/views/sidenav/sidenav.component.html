@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+        <button (click)="actionSideNav()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+        <span>Citec POS</span>
+        <span class="example-spacer"></span>
+
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+
+    <mat-sidenav mode="side" [(opened)]="opened">
+        <mat-nav-list>
+            <mat-list-item>
+                <a matLine href="...">POS</a>
+                <button mat-icon-button (click)="showInfo(link)">
+                  <mat-icon>info</mat-icon>
+               </button>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+
+</mat-sidenav-container>
