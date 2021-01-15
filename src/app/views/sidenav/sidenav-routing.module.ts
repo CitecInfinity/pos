@@ -10,13 +10,31 @@ const routes: Routes = [
     component: SidenavComponent,
     children: [
       {
-        path: "register", loadChildren: () => import("../../views/register/register.module").then(m => m.RegisterModule)
+        path: "register",
+        children: [
+          {
+            path: "",
+            loadChildren: () => import("../../views/register/register.module").then(m => m.RegisterModule)
+          }
+        ]
       },
       {
-        path: "cart", loadChildren: () => import("../../views/cart/cart.module").then(m => m.CartModule)
+        path: "cart",
+        children: [
+          {
+            path: "",
+            loadChildren: () => import("../../views/cart/cart.module").then(m => m.CartModule)
+          }
+        ]
       },
       {
-        path: "purchase", loadChildren: () => import("../../views/purchase/purchase.module").then(m => m.PurchaseModule)
+        path: "purchase",
+        children: [
+          {
+            path: "",
+            loadChildren: () => import("../../views/purchase/purchase.module").then(m => m.PurchaseModule)
+          }
+        ]
       }
     ]
   }
