@@ -7,18 +7,7 @@ import { SidenavComponent } from './sidenav.component';
 const routes: Routes = [
   {
     path: "",
-    component: SidenavComponent,
-    children: [
-      {
-        path: "register", loadChildren: () => import("../../views/register/register.module").then(m => m.RegisterModule)
-      },
-      {
-        path: "cart", loadChildren: () => import("../../views/cart/cart.module").then(m => m.CartModule)
-      },
-      {
-        path: "purchase", loadChildren: () => import("../../views/purchase/purchase.module").then(m => m.PurchaseModule)
-      }
-    ]
+    component: SidenavComponent
   }
 
 

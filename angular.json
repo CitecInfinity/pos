@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "posCitec"
+    }
+  },
+  "defaultProject": "posCitec",
+  "cli": {
+    "analytics": "b2eb3edc-8da8-4536-a470-b14a2f772412"
+  }
 }
