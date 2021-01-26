@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BillingModule } from './views/billing/billing.module';
 
 
 const routes: Routes = [
@@ -20,6 +21,9 @@ const routes: Routes = [
   },
   {
     path : "products", loadChildren: ()=> import("./views/products/products.module").then(m => m.ProductsModule)
+  },
+  {
+    path: "billing", loadChildren: ()=> import("./views/billing/billing.module").then(m=>m.BillingModule)
   }
 
 ];

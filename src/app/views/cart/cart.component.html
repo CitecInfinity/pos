@@ -1,88 +1,23 @@
-<div class="main-content">
-    <div class="main-content-inner">
-        <div class="row">
-            <div class="col-lg-12 mt-5">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="invoice-area">
-                            <div class="invoice-head">
-                                <div class="row">
-                                    <div class="iv-left col-6">
-                                        <span>Carrito de compras</span>
-                                    </div>
-                                    <!-- <div class="iv-right col-6 text-md-right">
-                                        <span>#34445998</span>
-                                    </div> -->
-                                </div>
-                            </div>
-                            <div class="row align-items-center">
-                                <div class="col-md-6">
-                                    <div class="invoice-address">
-                                        <h3>Fossil</h3>
-                                        <h5>Tienda central</h5>
-                                        <p>Vendedor Andres Perez</p>
-                                    </div>
-                                </div>
-                                <!-- <div class="col-md-6 text-md-right">
-                                    <ul class="invoice-date">
-                                        <li>Invoice Date : sat 18 | 07 | 2018</li>
-                                        <li>Due Date : sat 18 | 07 | 2018</li>
-                                    </ul>
-                                </div> -->
-                            </div>
-                            <div class="invoice-table table-responsive mt-5">
-                                <table class="table table-bordered table-hover text-right">
-                                    <thead>
-                                        <tr class="text-capitalize">
-                                            <th class="text-center">Codigo</th>
-                                            <th class="text-left">Nombre</th>
-                                            <th>Cantidad</th>
-                                            <th>Precio unitario</th>
-                                            <th>Total</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">185</td>
-                                            <td class="text-left">Cincho caballero</td>
-                                            <td>
-                                                <mat-form-field style="max-width: 50%;">
-                                                    <input matInput type="number">
-                                                </mat-form-field>
-                                            </td>
-                                            <td>Q.20.00</td>
-                                            <td>Q.20.00</td>
-                                            <td><button mat-button color="warn">Eliminar</button></td>
-                                        </tr>
-                                        <tr>
-                                            <td class="text-center">345</td>
-                                            <td class="text-left">Billetera cafe</td>
-                                            <td>
-                                                <mat-form-field style="max-width: 50%;">
-                                                    <input matInput type="number">
-                                                </mat-form-field>
-                                            </td>
-                                            <td>Q.50.00</td>
-                                            <td>Q.100.00</td>
-                                            <td><button mat-button color="warn">Eliminar</button></td>
-                                        </tr>
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="4">Monto total:</td>
-                                            <td>Q.120.00</td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="invoice-buttons text-right">
-                            <button mat-raised-button color="primary">Facturar</button>
-                            <button mat-button color="warn">Cancelar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<div class="container">
+    <div class="row">
+        <!-- Elementos generados a partir del JSON -->
+        <main id="items" class="col-sm-8 row"></main>
+        <!-- Carrito -->
+        <aside class="col-sm-4">
+            <h2>Carrito</h2>
+            <!-- Elementos del carrito -->
+            <ul *ngFor="let products of productsToShop" id="carrito" class="list-group">
+                <p class="title">Producto: {{products.nombre}}</p>
+                <p class="card-text">Precio: Q.{{products.precio}}</p>
+
+                <p class="card-text">Subtotal: Q.{{products.subtotal}}</p>
+                <input [value]="products.cantidad" (change)="cambioCantidad($event)" type="number" id="quantity_600109219048d" class="input-text qty text" style="max-width: 15%;">
+            </ul>
+            <hr>
+            <!-- Precio total -->
+            <p class="text-right">Total: <span id="total"></span>Q.</p>
+            <button id="boton-vaciar" class="btn btn-danger" (click)="limpiarCarrito()">Vaciar</button>
+            <button id="boton-finalizar" class="btn btn-danger" (click)="finalizarCompra()">Finalizar compra</button>
+        </aside>
     </div>
 </div>
