@@ -8,6 +8,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTableModule} from '@angular/material/table';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -19,7 +22,9 @@ import {MatCardModule} from '@angular/material/card';
     MatButtonModule,
     MatTableModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatSnackBarModule,
+    FormsModule
   ],
   exports: [
     CartComponent

@@ -5,6 +5,7 @@ import { ProductsRoutingModule } from './products-routing.module';
 import { ProductsComponent } from './products.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { CartModule } from '../cart/cart.module';
 
 @NgModule({
   declarations: [ProductsComponent],
@@ -12,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
     CommonModule,
     ProductsRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    CartModule
   ],
   exports: [
     ProductsComponent

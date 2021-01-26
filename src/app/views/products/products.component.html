@@ -1,0 +1,35 @@
+<div class="row">
+
+    <div class="col-sm-4">
+        <app-cart></app-cart>
+    </div>
+
+
+
+    <div class="col-sm-8">
+        <div class="main-content-inner">
+            <div class="card-area">
+                <div class="row">
+                    <div *ngFor="let product of products; let i = index" class="col-lg-4 col-md-6 mt-5">
+                        <div class="card card-primary card-bordered">
+                            <img class="card-img-top img-fluid" [src]="product.image" alt="image">
+                            <div class="card-body">
+                                <h5 class="title">{{product.name}}</h5>
+                                <p class="card-text">
+                                    Q.{{product.price}}
+                                </p>
+                                <button (click)="addToCart(i)" mat-button color="primary">
+                                            <mat-icon>
+                                                shopping_cart
+                                            </mat-icon>
+                                            Añadir al carrito
+                                        </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
